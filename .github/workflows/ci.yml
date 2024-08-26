@@ -1,11 +1,11 @@
 name: Linter (Hadolint)
 
 on:
-    push
+  push
 
 jobs:
 
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
