@@ -11,4 +11,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Lint files
-        run: ls
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          recursive: true
