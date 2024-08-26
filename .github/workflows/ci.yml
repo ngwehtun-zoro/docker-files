@@ -1,4 +1,4 @@
-name: Linter
+name: Linter (Hadolint)
 
 on:
     push
@@ -8,6 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Echo
-      run: echo 'It work'
+      - uses: actions/checkout@v4
+
+      - name: Lint files
+        run: ls
