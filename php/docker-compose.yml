@@ -1,0 +1,16 @@
+services:
+
+  php:
+    image: ${IMAGE_NAME}
+    container_name: php
+    ports:
+      - ${HTTP_PORT}:8080
+    volumes:
+      - ${WORKSPACE_FOLDER}:/var/www/html
+    networks:
+      - local-dev
+
+networks:
+  local-dev:
+    external: true
+
