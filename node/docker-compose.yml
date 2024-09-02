@@ -1,0 +1,20 @@
+services:
+
+  #---------------
+  # Node service -
+  #---------------
+  node:
+    image: node:${NODE_VERSION}
+    container_name: node
+    tty: true
+    hostname: node
+    volumes:
+      - ${PROJECT_PATH}:/app
+    ports:
+      - ${HTTP_PORT}:5173
+    networks:
+      - local-dev
+
+networks:
+  local-dev:
+    external: true
