@@ -1,0 +1,21 @@
+services:
+
+  db:
+    image: mysql:${MYSQL_VERSION}
+    container_name: db
+    ports:
+      - ${MYSQL_PORT}:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - local-dev
+
+networks:
+  local-dev:
+    external: true
+
+volumes:
+  mysql-data:
+    driver: local
