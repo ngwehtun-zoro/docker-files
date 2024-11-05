@@ -12,6 +12,7 @@ services:
       - ${PROJECT_PATH}:/app
     ports:
       - ${HTTP_PORT}:5173
+      - 3000:3000
     networks:
       - local-dev
 

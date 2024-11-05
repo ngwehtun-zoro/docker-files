@@ -1,0 +1,24 @@
+services:
+
+  postgres:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: postgres
+    restart: always
+    ports:
+      - ${POSTGRES_PORT}:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - local-dev
+
+networks:
+  local-dev:
+    driver: bridge
+    external: true
+
+volumes:
+  postgres_data:
+    driver: local
